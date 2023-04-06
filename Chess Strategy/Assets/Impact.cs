@@ -6,10 +6,14 @@ using UnityEngine;
 
 public class Impact : MonoBehaviour
 {
+    void OnEnable()
+    {
+        Invoke ("Destroy", 1.2f);
+    }
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag.Equals("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Piece") )
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
@@ -18,8 +22,8 @@ public class Impact : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Destroy()
     {
-        
+        Destroy(gameObject);
     }
 }
