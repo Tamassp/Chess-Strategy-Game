@@ -45,4 +45,9 @@ public class NavMesh : MonoBehaviour
        
            
     }
+
+    public void SetDestination(Vector3 _destination)
+    {
+        navMeshAgent.destination = _destination;
+    }
 }

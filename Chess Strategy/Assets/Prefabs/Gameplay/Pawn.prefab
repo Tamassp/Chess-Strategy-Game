@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -3828845321815810597}
   - component: {fileID: 1424896054152712005}
   - component: {fileID: 6958038937412500662}
+  - component: {fileID: 9173812910631401037}
   m_Layer: 0
   m_Name: Pawn
   m_TagString: Untagged
@@ -152,6 +153,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1efa3a8cb3234746af665d6b333f802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9173812910631401037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978492314779304008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679d4be5639a63d4290ea390290ab866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5884839508864750749
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884839508864750749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.014, y: 1.732, z: -0.071}
+  m_LocalPosition: {x: 0.014, y: 1.338, z: -0.071}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -197,8 +210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd545acf8ba2a04bab5b2943e1ec10c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 6325463721185539314, guid: 644c777718d10da468b2775ac7ad1203, type: 3}
-  launchVelocity: 20
+  projectile: {fileID: 6325463721185539314, guid: 472a41bfe130fa742b9c5cc0639d157e, type: 3}
+  launchVelocity: 5
+  launchAngle: 1
 --- !u!135 &5110557114691520129
 SphereCollider:
   m_ObjectHideFlags: 0

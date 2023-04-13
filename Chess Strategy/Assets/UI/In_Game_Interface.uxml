@@ -3,14 +3,14 @@
         <ui:VisualElement style="align-items: stretch; flex-direction: row; justify-content: center; flex-grow: 0;">
             <ui:Label text="Friendly Pieces " display-tooltip-when-elided="true" name="FriendsLabel" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;" />
             <ui:Label text="15" display-tooltip-when-elided="true" name="FriendsValue" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; font-size: 20px;" />
-            <ui:Label text="22" display-tooltip-when-elided="true" name="EnemiesValue" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; font-size: 20px;" />
+            <ui:Label display-tooltip-when-elided="true" name="EnemiesValue" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; font-size: 20px; width: 30px;" />
             <ui:Label text="Enemy Pieces " display-tooltip-when-elided="true" name="EnemiesLabel" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-direction: row; align-items: stretch; justify-content: center;">
-            <ui:Button text="Button" display-tooltip-when-elided="true" />
-            <ui:Button text="Button" display-tooltip-when-elided="true" />
-            <ui:Button text="Button" display-tooltip-when-elided="true" />
-            <ui:Button text="Button" display-tooltip-when-elided="true" />
+            <ui:Button text="Pawn" display-tooltip-when-elided="true" name="ButtonPawn" />
+            <ui:Button text="Knight" display-tooltip-when-elided="true" name="ButtonKnight" />
+            <ui:Button text="Bishop" display-tooltip-when-elided="true" name="ButtonBishop" />
+            <ui:Button text="Rook" display-tooltip-when-elided="true" name="ButtonRook" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -7,6 +7,7 @@ public class LaunchProjectile : MonoBehaviour
 {
     public GameObject projectile;
     public float launchVelocity = 700f;
+    public float launchAngle = 1;
     private bool isReloading = false;
 
     private void OnTriggerStay(Collider collider)
