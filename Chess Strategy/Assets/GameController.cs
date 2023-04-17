@@ -1,14 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public static int enemyCount = 0;
+    public static int enemyCount;
     private string currentLevel;
     private GameObject menuUIDocument;
     private GameObject uIDocument;
+
+    public GameObject level1Prefab;
     
     private void Awake()
     {
@@ -40,7 +43,22 @@ public class GameController : MonoBehaviour
         currentLevel = "Level1";
 
         int numberOfEnemies = Helpers.returnNumberOfGameObjectsWithTag("Enemy");
+        if(numberOfEnemies != 0)
         enemyCount = numberOfEnemies;
+    }
+    
+    public void Level2Start()
+    {
+        menuUIDocument.SetActive(false);
+        uIDocument.SetActive(true);
+        
+        GameObject  level2 = gameObject.transform.GetChild (4).gameObject;
+        level2.SetActive(true);
+        currentLevel = "Level2";
+
+        int numberOfEnemies = Helpers.returnNumberOfGameObjectsWithTag("Enemy");
+        if(numberOfEnemies != 0)
+            enemyCount = numberOfEnemies;
     }
 
     public void LevelClose(string _currentLevel)
@@ -52,6 +70,11 @@ public class GameController : MonoBehaviour
         print(uIDocument + " +++ " + menuUIDocument);
         uIDocument.SetActive(false);
         menuUIDocument.SetActive(true);
+        Destroy(currentLevel);
+        GameObject level1 = Instantiate(level1Prefab);
+        
+        level1.transform.parent = GameObject.Find("GameController").transform;
+        level1.SetActive(false);
     }
     
 
@@ -59,6 +82,7 @@ public class GameController : MonoBehaviour
     {
         if (enemyCount == 0)
         {
+            print("LEVELCLOSE");
             LevelClose(currentLevel);
             enemyCount = -1;
         }
