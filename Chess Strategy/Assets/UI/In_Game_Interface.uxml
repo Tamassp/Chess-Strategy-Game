@@ -1,10 +1,14 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:VisualElement style="flex-direction: column; justify-content: space-between; height: 100%;">
-        <ui:VisualElement style="align-items: stretch; flex-direction: row; justify-content: center; flex-grow: 0;">
-            <ui:Label text="Friendly Pieces " display-tooltip-when-elided="true" name="FriendsLabel" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;" />
-            <ui:Label text="15" display-tooltip-when-elided="true" name="FriendsValue" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; font-size: 20px;" />
-            <ui:Label display-tooltip-when-elided="true" name="EnemiesValue" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; font-size: 20px; width: 30px;" />
-            <ui:Label text="Enemy Pieces " display-tooltip-when-elided="true" name="EnemiesLabel" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;" />
+        <ui:VisualElement style="align-items: stretch; flex-direction: row; justify-content: space-between; flex-grow: 0;">
+            <ui:Label text="Level 1" display-tooltip-when-elided="true" name="CurrentLevelLabel" style="-unity-text-align: middle-left; font-size: 20px;" />
+            <ui:VisualElement style="flex-direction: row;">
+                <ui:Label text="Friendly Pieces " display-tooltip-when-elided="true" name="FriendsLabel" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; -unity-text-align: middle-left; white-space: nowrap;" />
+                <ui:Label text="15" display-tooltip-when-elided="true" name="FriendsValue" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; font-size: 20px;" />
+                <ui:Label display-tooltip-when-elided="true" name="EnemiesValue" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; font-size: 20px; width: 30px;" />
+                <ui:Label text="Enemy Pieces " display-tooltip-when-elided="true" name="EnemiesLabel" style="margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; -unity-text-align: middle-left;" />
+            </ui:VisualElement>
+            <ui:Button text="Exit Level" display-tooltip-when-elided="true" name="ExitLevelButton" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-direction: row; align-items: stretch; justify-content: center;">
             <ui:Button text="Pawn" display-tooltip-when-elided="true" name="ButtonPawn" />

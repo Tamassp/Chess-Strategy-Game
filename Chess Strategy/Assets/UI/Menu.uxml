@@ -1,17 +1,22 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement style="flex-direction: row; align-items: center; justify-content: center; height: 100%;">
-        <ui:VisualElement style="width: 170px; height: 300px; flex-direction: column; justify-content: space-between;">
+        <ui:VisualElement style="width: 260px; height: 320px; flex-direction: column; justify-content: space-between; min-width: 240px; min-height: 320px;">
             <ui:VisualElement>
-                <ui:Label text="Levels:" display-tooltip-when-elided="true" name="MenuLabel" style="font-size: 24px; justify-content: flex-start; align-items: center; -unity-text-align: upper-center;" />
-                <ui:VisualElement style="flex-direction: row; flex-wrap: wrap;">
-                    <ui:Button text="Level 1" display-tooltip-when-elided="true" name="Level1Button" style="width: 50px; height: 50px;" />
-                    <ui:Button text="Level 2" display-tooltip-when-elided="true" name="Level2Button" style="width: 50px; height: 50px;" />
-                    <ui:Button text="Level 3" display-tooltip-when-elided="true" name="Level3Button" style="width: 50px; height: 50px;" />
-                    <ui:Button text="Level 4" display-tooltip-when-elided="true" name="Level4Button" style="width: 50px; height: 50px;" />
+                <ui:Label text="Tutorial:" display-tooltip-when-elided="true" name="TutorialLabel" style="font-size: 24px; justify-content: flex-start; align-items: center; -unity-text-align: upper-center;" />
+                <ui:VisualElement style="flex-direction: row; justify-content: center; margin-top: 8px;">
+                    <ui:Button text="1" display-tooltip-when-elided="true" name="Tutorial1Button" style="width: 50px; height: 30px;" />
+                    <ui:Button text="2" display-tooltip-when-elided="true" style="width: 50px; height: 30px;" />
+                </ui:VisualElement>
+                <ui:Label text="Levels:" display-tooltip-when-elided="true" name="MenuLabel" style="font-size: 24px; justify-content: flex-start; align-items: center; -unity-text-align: upper-center; margin-top: 16px;" />
+                <ui:VisualElement style="flex-direction: row; flex-wrap: wrap; -unity-text-align: upper-left; justify-content: center; margin-top: 8px;">
+                    <ui:Button text="Level 1:  Pawns" display-tooltip-when-elided="true" name="Level1Button" style="width: 120px; height: 30px; white-space: nowrap; align-items: stretch;" />
+                    <ui:Button text="Level 2: Knights" display-tooltip-when-elided="true" name="Level2Button" style="width: 120px; height: 30px;" />
+                    <ui:Button text="Level 3: Bishops" display-tooltip-when-elided="true" name="Level3Button" style="width: 120px; height: 30px;" />
+                    <ui:Button text="Level 4: Rooks" display-tooltip-when-elided="true" name="Level4Button" style="width: 120px; height: 30px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement>
-                <ui:Button text="Settings" display-tooltip-when-elided="true" name="SettingsButton" />
+                <ui:Button text="Settings" display-tooltip-when-elided="true" name="SettingsButton" style="margin-top: 1px;" />
                 <ui:Button text="Quit Game" display-tooltip-when-elided="true" name="QuitButton" />
             </ui:VisualElement>
         </ui:VisualElement>

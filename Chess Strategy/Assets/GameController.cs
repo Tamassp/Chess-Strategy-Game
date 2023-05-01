@@ -7,11 +7,15 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static int enemyCount;
-    private string currentLevel;
+    public static string currentLevel = " ";
     private GameObject menuUIDocument;
     private GameObject uIDocument;
 
+    public GameObject tutorial1Prefab;
     public GameObject level1Prefab;
+    public GameObject level2Prefab;
+
+    private bool menuIsActive = true;
     
     private void Awake()
     {
@@ -29,61 +33,79 @@ public class GameController : MonoBehaviour
         enemyCount--;
     }
 
-    public void Level1Start()
+    public void Tutorial1Start()
     {
-        print("Gamecontroller");
-        // GameObject  MenuUIDocument = gameObject.transform.GetChild (0).gameObject;
-        // GameObject  UIDocument = gameObject.transform.GetChild (1).gameObject;
+        currentLevel = "Tutorial 1(Clone)";
         
         menuUIDocument.SetActive(false);
         uIDocument.SetActive(true);
         
-        GameObject  level1 = gameObject.transform.GetChild (3).gameObject;
-        level1.SetActive(true);
-        currentLevel = "Level1";
-
-        int numberOfEnemies = Helpers.returnNumberOfGameObjectsWithTag("Enemy");
-        if(numberOfEnemies != 0)
-        enemyCount = numberOfEnemies;
-    }
-    
-    public void Level2Start()
-    {
-        menuUIDocument.SetActive(false);
-        uIDocument.SetActive(true);
-        
-        GameObject  level2 = gameObject.transform.GetChild (4).gameObject;
-        level2.SetActive(true);
-        currentLevel = "Level2";
+        Instantiate(tutorial1Prefab, GameObject.Find("GameController").transform, true);
 
         int numberOfEnemies = Helpers.returnNumberOfGameObjectsWithTag("Enemy");
         if(numberOfEnemies != 0)
             enemyCount = numberOfEnemies;
+        menuIsActive = false;
     }
 
-    public void LevelClose(string _currentLevel)
+    public void Level1Start()
+    {
+        currentLevel = "Level1(Clone)";
+        
+        menuUIDocument.SetActive(false);
+        uIDocument.SetActive(true);
+
+        //Setting the parent of the element and instantiating
+        Instantiate(level1Prefab, GameObject.Find("GameController").transform, true);
+        
+
+        int numberOfEnemies = Helpers.returnNumberOfGameObjectsWithTag("Enemy");
+        if(numberOfEnemies != 0)
+        enemyCount = numberOfEnemies;
+        menuIsActive = false;
+    }
+    
+    public void Level2Start()
+    {
+        currentLevel = "Level2(Clone)";
+        menuUIDocument.SetActive(false);
+        uIDocument.SetActive(true);
+        
+        // GameObject  level2 = gameObject.transform.GetChild (4).gameObject;
+        // level2.SetActive(true);
+        Instantiate(level2Prefab, GameObject.Find("GameController").transform, true);
+        
+
+        int numberOfEnemies = Helpers.returnNumberOfGameObjectsWithTag("Enemy");
+        if(numberOfEnemies != 0)
+            enemyCount = numberOfEnemies;
+        menuIsActive = false;
+    }
+
+    public void LevelClose()
     {
         //In Unity the hierarchy information is stored in the transform property,
         //instead of the Gameobject itself
-        GameObject currentLevel = gameObject.transform.Find(_currentLevel).gameObject;
-        currentLevel.SetActive(false);
-        print(uIDocument + " +++ " + menuUIDocument);
+        GameObject cLevel = gameObject.transform.Find(currentLevel).gameObject;
+        //currentLevel.SetActive(false);
+        //print(uIDocument + " +++ " + menuUIDocument);
         uIDocument.SetActive(false);
         menuUIDocument.SetActive(true);
-        Destroy(currentLevel);
-        GameObject level1 = Instantiate(level1Prefab);
-        
-        level1.transform.parent = GameObject.Find("GameController").transform;
-        level1.SetActive(false);
+        Destroy(cLevel);
+        menuIsActive = true;
+
+        // //Setting the parent of the element and instantiating
+        // GameObject level1 = Instantiate(level1Prefab, GameObject.Find("GameController").transform, true);
+        // level1.SetActive(false);
     }
     
 
     private void Update()
     {
-        if (enemyCount == 0)
+        if (enemyCount == 0 && !menuIsActive) 
         {
             print("LEVELCLOSE");
-            LevelClose(currentLevel);
+            LevelClose();
             enemyCount = -1;
         }
     }
