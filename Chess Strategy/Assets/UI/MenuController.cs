@@ -13,10 +13,12 @@ public class MenuController : MonoBehaviour
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
         Button tutorial1Button = root.Q<Button>("Tutorial1Button");
+        Button tutorial2Button = root.Q<Button>("Tutorial2Button");
         Button level1Button = root.Q<Button>("Level1Button");
         Button level2Button = root.Q<Button>("Level2Button");
 
         tutorial1Button.clicked += () => Tutorial1Start();
+        tutorial2Button.clicked += () => Tutorial2Start();
         level1Button.clicked += () => Level1Start();
         level2Button.clicked += () => Level2Start();
     }
@@ -24,6 +26,11 @@ public class MenuController : MonoBehaviour
     private void Tutorial1Start()
     {
         _gameController.Tutorial1Start(); 
+    }
+    
+    private void Tutorial2Start()
+    {
+        _gameController.Tutorial2Start(); 
     }
 
     private void Level1Start()

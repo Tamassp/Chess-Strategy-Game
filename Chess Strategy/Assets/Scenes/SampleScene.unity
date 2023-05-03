@@ -2159,7 +2159,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23840
+  m_Name: pb_Mesh23852
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2741,7 +2741,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23972
+  m_Name: pb_Mesh23988
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4257,7 +4257,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23864
+  m_Name: pb_Mesh23876
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4514,7 +4514,7 @@ Transform:
   - {fileID: 751380621}
   - {fileID: 956416710}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1956422842
 GameObject:
@@ -4629,9 +4629,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorial1Prefab: {fileID: 5651256122783283479, guid: a69f3ec54790c614eb9387bf048b00ca, type: 3}
+  tutorial2Prefab: {fileID: 8780397569727107787, guid: fe364dd8a0a2a6a43b6a4c43f4e69c56, type: 3}
   level1Prefab: {fileID: 820931086102899803, guid: 9a3655b8bdde7aa4783f4b9a9884b162, type: 3}
   level2Prefab: {fileID: 1619988024559608486, guid: c0e3276b8da8e9c4c90d9d9f174a611a, type: 3}
   tutorial1Data: {fileID: 11400000, guid: 47efadd3d36b62d4bbf1a0fb433360e4, type: 2}
+  tutorial2Data: {fileID: 11400000, guid: 7cf79bbd768cb7b47be6effdb1e2cfec, type: 2}
   level1Data: {fileID: 11400000, guid: 4202f83c0fd60bf4e948032487c681ad, type: 2}
   level2Data: {fileID: 11400000, guid: 7b1aff3e1ad4c6e48813060abfd7d6be, type: 2}
 --- !u!4 &820931086441433333 stripped
@@ -4778,7 +4780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5651256122783283480, guid: a69f3ec54790c614eb9387bf048b00ca, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5651256122783283480, guid: a69f3ec54790c614eb9387bf048b00ca, type: 3}
       propertyPath: m_LocalPosition.x

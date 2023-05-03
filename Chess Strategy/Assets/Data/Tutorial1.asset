@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: Tutorial1
   m_EditorClassIdentifier: 
   levelName: Tutorial 1
-  description: Hello {PlayerName}. You will learn how to fight
+  description: "Hey Commander! You will take down The King, but first you need to
+    learn how a battle works.  You can move the map with the WASD keys or by hovering
+    the mouse on the edge of the screen.  The goal of every fight is to take down
+    all of the enemy pieces. You an do that by positioning your pieces close to the
+    enemy. They will automatically engage.  \t1. Select a piece by clicking on them
+    or by holding down the LEFT MOUSE and dragging it accross multiple pieces \t2.
+    Give a move order by clicking anywhere on the board with the RIGTH MOUSE  Take
+    down all 3 enemy pieces"
   enemies: 0

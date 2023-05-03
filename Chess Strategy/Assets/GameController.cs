@@ -12,16 +12,20 @@ public class GameController : MonoBehaviour
 
     public static string popupTitle = " ";
     public static string popupDescription = " ";
+
+    public static int gold = 0;
     
     private GameObject menuUIDocument;
     private GameObject uIDocument;
     private GameObject popupDocument;
 
     public GameObject tutorial1Prefab;
+    public GameObject tutorial2Prefab;
     public GameObject level1Prefab;
     public GameObject level2Prefab;
 
     public LevelData tutorial1Data;
+    public LevelData tutorial2Data;
     public LevelData level1Data;
     public LevelData level2Data;
 
@@ -63,6 +67,9 @@ public class GameController : MonoBehaviour
             case "Tutorial 1(Clone)":
                 currentPrefab = tutorial1Prefab;
                 break;
+            case "Tutorial 2(Clone)":
+                currentPrefab = tutorial2Prefab;
+                break;
             case "Level1(Clone)":
                 currentPrefab = level1Prefab;
                 break;
@@ -97,12 +104,20 @@ public class GameController : MonoBehaviour
         menuUIDocument.SetActive(false);
         OpenPopup(tutorial1Data);
     }
+    
+    public void Tutorial2Start()
+    {
+        currentLevel = "Tutorial 2(Clone)";
+        menuUIDocument.SetActive(false);
+        OpenPopup(tutorial2Data);
+    }
 
     public void Level1Start()
     {
         currentLevel = "Level1(Clone)";
         menuUIDocument.SetActive(false);
         OpenPopup(level1Data);
+        gold = 15;
     }
     
     public void Level2Start()
@@ -110,6 +125,7 @@ public class GameController : MonoBehaviour
         currentLevel = "Level2(Clone)";
         menuUIDocument.SetActive(false);
         OpenPopup(level2Data);
+        gold = 20;
     }
 
     public void LevelClose()
@@ -121,6 +137,7 @@ public class GameController : MonoBehaviour
         menuUIDocument.SetActive(true);
         Destroy(cLevel);
         menuIsActive = true;
+        gold = 0;
     }
     
 

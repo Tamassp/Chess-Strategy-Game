@@ -14,7 +14,10 @@ public class UIController : MonoBehaviour
     public GameObject rookPrefab;
 
     private VisualElement root;
-    private Label enemies, levelLabel;
+    private Label enemies, levelLabel, goldLabel;
+    
+    //Event listener
+    //private int gold = GameController.gold;
 
     private void OnEnable()
     {
@@ -22,6 +25,10 @@ public class UIController : MonoBehaviour
 
         levelLabel = root.Q<Label>("CurrentLevelLabel");
         levelLabel.text = GameController.currentLevel.Substring(0, 6 );
+
+        goldLabel = root.Q<Label>("GoldValue");
+        goldLabel.text = GameController.gold.ToString();
+        
         Button buttonPawn = root.Q<Button>("ButtonPawn");
         Button buttonKnight = root.Q<Button>("ButtonKnight");
         Button buttonBishop = root.Q<Button>("ButtonBishop");
@@ -54,29 +61,58 @@ public class UIController : MonoBehaviour
 
     private void PawnSpawn()
     {
-        GameObject newPawn = Instantiate(pawnPrefab, new Vector3(-30, 0, -48), Quaternion.identity);
-        newPawn.tag = "Piece";
-        newPawn.GetComponent<NavMesh>().SetDestination(new Vector3(-30, 0, -30));
+        if (GameController.gold > 0)
+        {
+            GameObject newPawn = Instantiate(pawnPrefab, new Vector3(-30, 0, -48), Quaternion.identity);
+            newPawn.tag = "Piece";
+            newPawn.GetComponent<NavMesh>().SetDestination(new Vector3(-30, 0, -30));
+
+            //Update with event listener
+            GameController.gold--;
+            goldLabel.text = GameController.gold.ToString();
+        }
+        else
+        {
+            //NOT ENOUGH GOLD
+        }
     }
 
     private void KnightSpawn()
     {
-        GameObject newKnight = Instantiate(knightPrefab, new Vector3(-20, 0, -48), Quaternion.identity);
-        newKnight.tag = "Piece";
-        newKnight.GetComponent<NavMesh>().SetDestination(new Vector3(-20, 0, -30));
+        if (GameController.gold >= 2)
+        {
+            GameObject newKnight = Instantiate(knightPrefab, new Vector3(-20, 0, -48), Quaternion.identity);
+            newKnight.tag = "Piece";
+            newKnight.GetComponent<NavMesh>().SetDestination(new Vector3(-20, 0, -30));
+            
+            GameController.gold -= 2;
+            goldLabel.text = GameController.gold.ToString();
+        }
     }
     
     private void BishopSpawn()
     {
-        GameObject newBishop = Instantiate(bishopPrefab, new Vector3(20, 0, -48), Quaternion.identity);
-        newBishop.tag = "Piece";
-        newBishop.GetComponent<NavMesh>().SetDestination(new Vector3(20, 0, -30));
+        if (GameController.gold >= 2)
+        {
+            GameObject newBishop = Instantiate(bishopPrefab, new Vector3(20, 0, -48), Quaternion.identity);
+            newBishop.tag = "Piece";
+            newBishop.GetComponent<NavMesh>().SetDestination(new Vector3(20, 0, -30));
+            
+            GameController.gold -= 2;
+            goldLabel.text = GameController.gold.ToString();
+        }
     }
 
     private void RookSpawn()
     {
-        GameObject newRook = Instantiate(rookPrefab, new Vector3(30, 0, -48), Quaternion.identity);
-        newRook.tag = "Piece";
-        newRook.GetComponent<NavMesh>().SetDestination(new Vector3(30, 0, -30));
+        if (GameController.gold >= 5)
+        {
+            GameObject newRook = Instantiate(rookPrefab, new Vector3(30, 0, -48), Quaternion.identity);
+            newRook.tag = "Piece";
+            newRook.GetComponent<NavMesh>().SetDestination(new Vector3(30, 0, -30));
+            
+            GameController.gold -= 5;
+            goldLabel.text = GameController.gold.ToString();
+        }
     }
 }

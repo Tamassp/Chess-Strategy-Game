@@ -11,6 +11,8 @@
             <ui:Button text="Exit Level" display-tooltip-when-elided="true" name="ExitLevelButton" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-direction: row; align-items: stretch; justify-content: center;">
+            <ui:Label text="Gold:" display-tooltip-when-elided="true" name="GoldLabel" style="font-size: 20px;" />
+            <ui:Label text="0" display-tooltip-when-elided="true" name="GoldValue" style="font-size: 20px; margin-right: 24px;" />
             <ui:Button text="Pawn" display-tooltip-when-elided="true" name="ButtonPawn" />
             <ui:Button text="Knight" display-tooltip-when-elided="true" name="ButtonKnight" />
             <ui:Button text="Bishop" display-tooltip-when-elided="true" name="ButtonBishop" />
