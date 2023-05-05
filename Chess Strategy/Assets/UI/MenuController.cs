@@ -7,6 +7,8 @@ using UnityEngine.UIElements;
 public class MenuController : MonoBehaviour
 {
     public GameController _gameController;
+
+    // private int completedLevels;
     
     private void OnEnable()
     {
@@ -21,8 +23,39 @@ public class MenuController : MonoBehaviour
         tutorial2Button.clicked += () => Tutorial2Start();
         level1Button.clicked += () => Level1Start();
         level2Button.clicked += () => Level2Start();
+
+        tutorial2Button.SetEnabled(false);
+        level1Button.SetEnabled(false);
+        level2Button.SetEnabled(false);
+        if (_gameController.getCompletedLevels() > 0)
+        {
+            tutorial2Button.SetEnabled(true);
+        }
+        
+        if (_gameController.getCompletedLevels() > 1)
+        {
+            level1Button.SetEnabled(true);
+        }
+
+        if (_gameController.getCompletedLevels() > 2)
+        {
+            level1Button.SetEnabled(true);
+            level2Button.SetEnabled(true);
+        }
     }
 
+
+    // public void LoadData(GameData data)
+    // {
+    //     this.completedLevels = data.completedLevels;
+    //     print("Levels" + this.completedLevels);
+    // }
+    //
+    // public void SaveData(ref GameData data)
+    // {
+    //     data.completedLevels = this.completedLevels;
+    // }
+    
     private void Tutorial1Start()
     {
         _gameController.Tutorial1Start(); 
@@ -41,4 +74,5 @@ public class MenuController : MonoBehaviour
     {
         _gameController.Level2Start();
     }
+
 }

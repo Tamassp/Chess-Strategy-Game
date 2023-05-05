@@ -5,13 +5,15 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class GameController : MonoBehaviour
+public class GameController : MonoBehaviour, IDataPersistence
 {
     public static int enemyCount;
     public static string currentLevel = " ";
 
     public static string popupTitle = " ";
     public static string popupDescription = " ";
+    
+    private int completedLevels;
 
     public static int gold = 0;
     
@@ -134,10 +136,31 @@ public class GameController : MonoBehaviour
         //instead of the Gameobject itself
         GameObject cLevel = gameObject.transform.Find(currentLevel).gameObject;
         uIDocument.SetActive(false);
-        menuUIDocument.SetActive(true);
+        
         Destroy(cLevel);
         menuIsActive = true;
         gold = 0;
+
+        switch (currentLevel)
+        {
+            case "Tutorial 1(Clone)":
+                if(completedLevels == 0) 
+                    completedLevels ++;
+                break;
+            case "Tutorial 2(Clone)":
+                if(completedLevels == 1) 
+                    completedLevels ++;
+                break;
+            case "Level1(Clone)":
+                if(completedLevels == 2) 
+                    completedLevels ++;
+                break;
+            case  "Level2(Clone)":
+                if(completedLevels == 3) 
+                    completedLevels ++;
+                break;
+        }
+        menuUIDocument.SetActive(true);
     }
     
 
@@ -149,5 +172,23 @@ public class GameController : MonoBehaviour
             LevelClose();
             enemyCount = -1;
         }
+    }
+
+    public int getCompletedLevels()
+    {
+        return completedLevels;
+    }
+    
+    public void LoadData(GameData data)
+    {
+        this.completedLevels = data.completedLevels;
+        print("CL "+ completedLevels);
+        menuUIDocument.SetActive(true);
+        print("UI???");
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.completedLevels = this.completedLevels;
     }
 }
