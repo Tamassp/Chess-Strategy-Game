@@ -125,7 +125,7 @@ public class GameController : MonoBehaviour
         currentLevel = "Level2(Clone)";
         menuUIDocument.SetActive(false);
         OpenPopup(level2Data);
-        gold = 20;
+        gold = 40;
     }
 
     public void LevelClose()

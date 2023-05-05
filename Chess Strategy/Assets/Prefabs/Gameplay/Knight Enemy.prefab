@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 4584602940385207020}
   - component: {fileID: 6683893273354443}
   m_Layer: 0
-  m_Name: Knight
-  m_TagString: Piece
+  m_Name: Knight Enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3b72b1a3e6acc4b468f377fd632ef977, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd545acf8ba2a04bab5b2943e1ec10c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 6325463721185539314, guid: 9ce0e63cc32799244966381c4bfbad27, type: 3}
+  projectile: {fileID: 6325463721185539314, guid: 472a41bfe130fa742b9c5cc0639d157e, type: 3}
   launchVelocity: 5
   launchAngle: 1
 --- !u!135 &9060406729580586151
