@@ -9,6 +9,12 @@ public class LaunchProjectile : MonoBehaviour
     public float launchVelocity = 700f;
     public float launchAngle = 1;
     private bool isReloading = false;
+    private AudioSource source;
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerStay(Collider collider)
     {
@@ -31,20 +37,23 @@ public class LaunchProjectile : MonoBehaviour
                 isReloading = true;
                 Invoke("Reload", 1.0f);
                 //print("ENEMY");
+                
+                if(source)
+                source.Play();
             }
         }
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown("space"))
-        {
-            GameObject ball = Instantiate(projectile, transform.position,
-                transform.rotation);
-            ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
-                (0, launchVelocity, launchVelocity));
-        }
-    }
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown("space"))
+    //     {
+    //         GameObject ball = Instantiate(projectile, transform.position,
+    //             transform.rotation);
+    //         ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
+    //             (0, launchVelocity, launchVelocity));
+    //     }
+    // }
 
     void Reload()
     {
