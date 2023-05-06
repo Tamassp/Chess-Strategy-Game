@@ -9,8 +9,8 @@ public class SelectionComponent : MonoBehaviour
     void Start()
     {
         if (gameObject.tag.Equals("Piece") || gameObject.tag.Equals("Enemy"))
-        {
-            GetComponent<Renderer>().material.color = Color.red;
+        { 
+            GetComponentInChildren<Renderer>().material.color = Color.red;
         }
     }
 
@@ -18,7 +18,7 @@ public class SelectionComponent : MonoBehaviour
     {
         if (gameObject.tag.Equals("Piece") || gameObject.tag.Equals("Enemy"))
         {
-            GetComponent<Renderer>().material.color = Color.white;
+            GetComponentInChildren<Renderer>().material.color = Color.white;
         }
     }
 }

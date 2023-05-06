@@ -15,6 +15,12 @@ public class UIController : MonoBehaviour
 
     private VisualElement root;
     private Label enemies, levelLabel, goldLabel;
+
+
+    private int positionOffsetXPawn = 0;
+    private int positionOffsetXKnight = 0;
+    private int positionOffsetXBishop = 0;
+    private int positionOffsetXRook = 0;
     
     //Event listener
     //private int gold = GameController.gold;
@@ -65,8 +71,8 @@ public class UIController : MonoBehaviour
         {
             GameObject newPawn = Instantiate(pawnPrefab, new Vector3(-30, 0, -48), Quaternion.identity);
             newPawn.tag = "Piece";
-            newPawn.GetComponent<NavMesh>().SetDestination(new Vector3(-30, 0, -30));
-
+            newPawn.GetComponent<NavMesh>().SetDestination(new Vector3(-30 + positionOffsetXPawn, 0, -30));
+            positionOffsetXPawn++;
             //Update with event listener
             GameController.gold--;
             goldLabel.text = GameController.gold.ToString();
@@ -83,20 +89,21 @@ public class UIController : MonoBehaviour
         {
             GameObject newKnight = Instantiate(knightPrefab, new Vector3(-20, 0, -48), Quaternion.identity);
             newKnight.tag = "Piece";
-            newKnight.GetComponent<NavMesh>().SetDestination(new Vector3(-20, 0, -30));
+            newKnight.GetComponent<NavMesh>().SetDestination(new Vector3(-20 + positionOffsetXKnight, 0, -35));
+            positionOffsetXKnight+=2;
             
             GameController.gold -= 2;
             goldLabel.text = GameController.gold.ToString();
         }
     }
-    
     private void BishopSpawn()
     {
         if (GameController.gold >= 2)
         {
             GameObject newBishop = Instantiate(bishopPrefab, new Vector3(20, 0, -48), Quaternion.identity);
             newBishop.tag = "Piece";
-            newBishop.GetComponent<NavMesh>().SetDestination(new Vector3(20, 0, -30));
+            newBishop.GetComponent<NavMesh>().SetDestination(new Vector3(20 + positionOffsetXBishop, 0, -30));
+            positionOffsetXBishop++;
             
             GameController.gold -= 2;
             goldLabel.text = GameController.gold.ToString();
@@ -109,7 +116,8 @@ public class UIController : MonoBehaviour
         {
             GameObject newRook = Instantiate(rookPrefab, new Vector3(30, 0, -48), Quaternion.identity);
             newRook.tag = "Piece";
-            newRook.GetComponent<NavMesh>().SetDestination(new Vector3(30, 0, -30));
+            newRook.GetComponent<NavMesh>().SetDestination(new Vector3(30 + positionOffsetXRook, 0, -35));
+            positionOffsetXRook+=3;
             
             GameController.gold -= 5;
             goldLabel.text = GameController.gold.ToString();

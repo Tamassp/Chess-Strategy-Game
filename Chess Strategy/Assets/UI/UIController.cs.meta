@@ -3,7 +3,12 @@ guid: 5c12f504782aafa46bb0b9fcfd83e6dd
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _gameController: {instanceID: 0}
+  - pawnPrefab: {fileID: 8132039844185570521, guid: 9a96ebbade55f024e9e22cac58beb194, type: 3}
+  - knightPrefab: {instanceID: 0}
+  - bishopPrefab: {instanceID: 0}
+  - rookPrefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

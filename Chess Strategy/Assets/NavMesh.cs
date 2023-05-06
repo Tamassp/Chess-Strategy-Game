@@ -39,8 +39,9 @@ public class NavMesh : MonoBehaviour
 
         if (destination != Vector3.zero && (navMeshAgent.transform.position - destination).magnitude < 3)
         {
-            destination = Vector3.zero;
-            navMeshAgent.isStopped = true;
+            destination = gameObject.transform.position;
+            //navMeshAgent.isStopped = true;
+            navMeshAgent.destination = gameObject.transform.position;
         }
        
            
