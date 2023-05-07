@@ -11,5 +11,9 @@ public class Piece : MonoBehaviour
         {
             GameController.enemyCount--;
         }
+        if (gameObject.CompareTag("Piece"))
+        {
+            GameController.pieceCount--;
+        }
     }
 }

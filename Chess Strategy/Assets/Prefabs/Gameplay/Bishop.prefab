@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -3828845321815810597}
   - component: {fileID: 1424896054152712005}
   - component: {fileID: 6958038937412500662}
+  - component: {fileID: -7682935651787421390}
   m_Layer: 0
   m_Name: Bishop
   m_TagString: Untagged
@@ -128,7 +129,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 9
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 360
@@ -150,6 +151,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1efa3a8cb3234746af665d6b333f802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7682935651787421390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978492314779304008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679d4be5639a63d4290ea390290ab866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5884839508864750749
@@ -197,8 +210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd545acf8ba2a04bab5b2943e1ec10c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 6325463721185539314, guid: 644c777718d10da468b2775ac7ad1203, type: 3}
+  projectile: {fileID: 6325463721185539314, guid: 472a41bfe130fa742b9c5cc0639d157e, type: 3}
   launchVelocity: 20
+  launchAngle: 1
+  reloadTime: 0.2
 --- !u!135 &5110557114691520129
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -210,5 +225,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}

@@ -14,7 +14,7 @@ public class UIController : MonoBehaviour
     public GameObject rookPrefab;
 
     private VisualElement root;
-    private Label enemies, levelLabel, goldLabel;
+    private Label enemies, pieces, levelLabel, goldLabel;
 
 
     private int positionOffsetXPawn = 0;
@@ -50,13 +50,15 @@ public class UIController : MonoBehaviour
         buttonExitLevel.clicked += () => ExitLevel();
 
         enemies = root.Q<Label>("EnemiesValue");
-        
+        pieces = root.Q<Label>("FriendsValue");
+
         //GameController.
     }
 
     private void Update()
     {
         enemies.text = GameController.enemyCount.ToString();
+        pieces.text = GameController.pieceCount.ToString();
     }
 
     private void ExitLevel()
@@ -76,6 +78,9 @@ public class UIController : MonoBehaviour
             //Update with event listener
             GameController.gold--;
             goldLabel.text = GameController.gold.ToString();
+
+            GameController.pieceCount++;
+            pieces.text = GameController.pieceCount.ToString();
         }
         else
         {
@@ -87,13 +92,16 @@ public class UIController : MonoBehaviour
     {
         if (GameController.gold >= 2)
         {
-            GameObject newKnight = Instantiate(knightPrefab, new Vector3(-20, 0, -48), Quaternion.identity);
+            GameObject newKnight = Instantiate(knightPrefab, new Vector3(-20, 0, -45), Quaternion.identity);
             newKnight.tag = "Piece";
             newKnight.GetComponent<NavMesh>().SetDestination(new Vector3(-20 + positionOffsetXKnight, 0, -35));
             positionOffsetXKnight+=2;
             
             GameController.gold -= 2;
             goldLabel.text = GameController.gold.ToString();
+            
+            GameController.pieceCount++;
+            pieces.text = GameController.pieceCount.ToString();
         }
     }
     private void BishopSpawn()
@@ -107,6 +115,9 @@ public class UIController : MonoBehaviour
             
             GameController.gold -= 2;
             goldLabel.text = GameController.gold.ToString();
+            
+            GameController.pieceCount++;
+            pieces.text = GameController.pieceCount.ToString();
         }
     }
 
@@ -121,6 +132,9 @@ public class UIController : MonoBehaviour
             
             GameController.gold -= 5;
             goldLabel.text = GameController.gold.ToString();
+            
+            GameController.pieceCount++;
+            pieces.text = GameController.pieceCount.ToString();
         }
     }
 }

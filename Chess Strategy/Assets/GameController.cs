@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 public class GameController : MonoBehaviour, IDataPersistence
 {
     public static int enemyCount;
+    public static int pieceCount;
     public static string currentLevel = " ";
 
     public static string popupTitle = " ";
@@ -25,11 +26,13 @@ public class GameController : MonoBehaviour, IDataPersistence
     public GameObject tutorial2Prefab;
     public GameObject level1Prefab;
     public GameObject level2Prefab;
+    public GameObject level3Prefab;
 
     public LevelData tutorial1Data;
     public LevelData tutorial2Data;
     public LevelData level1Data;
     public LevelData level2Data;
+    public LevelData level3Data;
 
     private bool menuIsActive = true;
 
@@ -78,6 +81,9 @@ public class GameController : MonoBehaviour, IDataPersistence
             case "Level2(Clone)" :
                 currentPrefab = level2Prefab;
                 break;
+            case "Level3(Clone)" :
+                currentPrefab = level3Prefab;
+                break;
             default:
                 //Change this to an error prefab
                 currentPrefab = tutorial1Prefab;
@@ -97,7 +103,13 @@ public class GameController : MonoBehaviour, IDataPersistence
         int numberOfEnemies = Helpers.returnNumberOfGameObjectsWithTag("Enemy");
         if(numberOfEnemies != 0)
             enemyCount = numberOfEnemies;
+        int numberOfPieces = Helpers.returnNumberOfGameObjectsWithTag("Piece");
+        if (numberOfPieces != 0)
+        {
+            pieceCount = numberOfPieces;
+        }
         menuIsActive = false;
+        
     }
 
     public void Tutorial1Start()
@@ -119,7 +131,7 @@ public class GameController : MonoBehaviour, IDataPersistence
         currentLevel = "Level1(Clone)";
         menuUIDocument.SetActive(false);
         OpenPopup(level1Data);
-        gold = 15;
+        gold = 30;
     }
     
     public void Level2Start()
@@ -127,6 +139,16 @@ public class GameController : MonoBehaviour, IDataPersistence
         currentLevel = "Level2(Clone)";
         menuUIDocument.SetActive(false);
         OpenPopup(level2Data);
+        gold = 50;
+    }
+    
+    public void Level3Start()
+    {
+        currentLevel = "Level3(Clone)";
+        print("LEVELL3");
+        
+        menuUIDocument.SetActive(false);
+        OpenPopup(level3Data);
         gold = 40;
     }
 
@@ -136,6 +158,16 @@ public class GameController : MonoBehaviour, IDataPersistence
         //instead of the Gameobject itself
         GameObject cLevel = gameObject.transform.Find(currentLevel).gameObject;
         uIDocument.SetActive(false);
+        
+        //Delete remaining pieces
+        // GameObject[] gos = Helpers.getAllPieces();
+        // int i = 0;
+        // while (gos.Length > 0)
+        // {
+        //     Destroy(gos[i]);
+        // }
+        
+        
         
         Destroy(cLevel);
         menuIsActive = true;
@@ -168,9 +200,13 @@ public class GameController : MonoBehaviour, IDataPersistence
     {
         if (enemyCount == 0 && !menuIsActive) 
         {
-            print("LEVELCLOSE");
             LevelClose();
             enemyCount = -1;
+        }
+
+        if (pieceCount == 0 && gold == 0)
+        {
+            LevelClose();
         }
     }
 

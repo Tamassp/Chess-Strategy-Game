@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e23510afc92bc3844bdf7af241b965c6, type: 3}
-  m_Name: Tutorial2
+  m_Name: Level3
   m_EditorClassIdentifier: 
-  levelName: 'Tutorial 2: Covers & Flanking'
-  description: If the enemy is in cover, then you cannot hit them from the front.
-    \n\n  Flank them to take them down
+  levelName: Level 3
+  description: dasadsads
   enemies: 0

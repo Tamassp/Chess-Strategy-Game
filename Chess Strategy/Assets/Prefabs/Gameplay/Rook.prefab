@@ -200,6 +200,7 @@ MonoBehaviour:
   projectile: {fileID: 6325463721185539314, guid: 644c777718d10da468b2775ac7ad1203, type: 3}
   launchVelocity: 1100
   launchAngle: 1
+  reloadTime: 3
 --- !u!135 &5110557114691520129
 SphereCollider:
   m_ObjectHideFlags: 0

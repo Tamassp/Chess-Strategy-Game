@@ -8,6 +8,7 @@ public class LaunchProjectile : MonoBehaviour
     public GameObject projectile;
     public float launchVelocity = 700f;
     public float launchAngle = 1;
+    public float reloadTime = 1.0f;
     private bool isReloading = false;
     private AudioSource source;
 
@@ -35,7 +36,7 @@ public class LaunchProjectile : MonoBehaviour
                 ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
                     (x * 100, launchVelocity, z * 100));
                 isReloading = true;
-                Invoke("Reload", 1.0f);
+                Invoke("Reload", reloadTime);
                 //print("ENEMY");
                 
                 if(source)
