@@ -46,6 +46,30 @@ public class UIController : MonoBehaviour
         buttonKnight.clicked += () => KnightSpawn();
         buttonBishop.clicked += () => BishopSpawn();
         buttonRook.clicked += () => RookSpawn();
+        
+        buttonPawn.SetEnabled(false);
+        buttonKnight.SetEnabled(false);
+        buttonBishop.SetEnabled(false);
+        buttonRook.SetEnabled(false);
+
+        if (_gameController.getCompletedLevels() > 1)
+        {
+            buttonPawn.SetEnabled(true);
+        }
+        if (_gameController.getCompletedLevels() > 2)
+        {
+            buttonKnight.SetEnabled(true);
+        }
+        if (_gameController.getCompletedLevels() > 3)
+        {
+            buttonBishop.SetEnabled(true);
+        }
+        //Under construction
+        // if (_gameController.getCompletedLevels() > 4)
+        // {
+        //     buttonRook.SetEnabled(true);
+        // }
+        
 
         buttonExitLevel.clicked += () => ExitLevel();
 

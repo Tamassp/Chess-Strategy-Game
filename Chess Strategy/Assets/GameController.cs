@@ -156,9 +156,11 @@ public class GameController : MonoBehaviour, IDataPersistence
     {
         //In Unity the hierarchy information is stored in the transform property,
         //instead of the Gameobject itself
+        print("WHYY");
         GameObject cLevel = gameObject.transform.Find(currentLevel).gameObject;
         uIDocument.SetActive(false);
-        
+        Destroy(cLevel);
+
         //Delete remaining pieces
         // GameObject[] gos = Helpers.getAllPieces();
         // int i = 0;
@@ -204,8 +206,9 @@ public class GameController : MonoBehaviour, IDataPersistence
             enemyCount = -1;
         }
 
-        if (pieceCount == 0 && gold == 0)
+        if (pieceCount == 0 && gold == 0 && !menuIsActive)
         {
+            print("22");
             LevelClose();
         }
     }

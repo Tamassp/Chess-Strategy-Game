@@ -20,12 +20,14 @@ public class MenuController : MonoBehaviour
         Button level2Button = root.Q<Button>("Level2Button");
         Button level3Button = root.Q<Button>("Level3Button");
         Button level4Button = root.Q<Button>("Level4Button");
+        Button quitButton = root.Q<Button>("QuitButton");
 
         tutorial1Button.clicked += () => Tutorial1Start();
         tutorial2Button.clicked += () => Tutorial2Start();
         level1Button.clicked += () => Level1Start();
         level2Button.clicked += () => Level2Start();
         level3Button.clicked += () => Level3Start();
+        quitButton.clicked += () => QuitGame();
 
         tutorial2Button.SetEnabled(false);
         level1Button.SetEnabled(false);
@@ -87,6 +89,11 @@ public class MenuController : MonoBehaviour
     private void Level3Start()
     {
         _gameController.Level3Start();
+    }
+
+    private void QuitGame()
+    {
+        Application.Quit();
     }
 
 }

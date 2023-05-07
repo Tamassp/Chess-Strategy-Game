@@ -18,9 +18,9 @@ MonoBehaviour:
     the Dark King and its forces to ensure peace for your people.\\n\\n   The goal
     of every fight is to take down all enemy pieces. You can do that by positioning
     your pieces close to the enemy. They will automatically engage.\\n\\n  Controls:\\n\\n 
-    Move map: WASD keys or hovering the mouse on the edge of the screen. \\n Move
-    pieces: \\n \t1. Select a piece by clicking on them or by holding down the LEFT
-    MOUSE and dragging it accross multiple pieces\\n \t2. Give a move order by clicking
-    anywhere on the board with the RIGTH MOUSE\\n\\n\\n    Take down all 3 enemy
-    pieces"
+    Move map: WASD keys or hovering the mouse on the edge of the screen \\n Zoom
+    in and out using the Mouse Scroll \\n Move pieces: \\n \t1. Select a piece by
+    clicking on them or by holding down the LEFT MOUSE and dragging it accross multiple
+    pieces\\n \t2. Give a move order by clicking anywhere on the board with the RIGTH
+    MOUSE\\n\\n\\n    Take down all 3 enemy pieces "
   enemies: 0

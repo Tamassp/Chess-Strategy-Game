@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Level3
   m_EditorClassIdentifier: 
   levelName: Level 3
-  description: dasadsads
+  description: 'The Dark King set up a maze to confuse you with a lot of his close
+    range Bishops.   <b>Bishops</b> (cost: 3 gold)  Bishops are a bit faster than
+    regular pawns, they have very fast reload speed, but their range is half of the
+    usual. Try to use this to your advantage. '
   enemies: 0
