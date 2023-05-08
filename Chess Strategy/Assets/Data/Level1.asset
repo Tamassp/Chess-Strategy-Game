@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23510afc92bc3844bdf7af241b965c6, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  levelName: Level 1
+  levelName: 'Level 1: Pawns'
   description: 'Your scouts discovered the Dark King''s vanguard. This will be your
     first obstacle to defeat him. \n\n  <b>Pawns:</b> (cost: 1 gold)  Pawns are your
     core pieces. They can shoot small balls in small range. Keeping them on the move
     and sending them behind covers gives their advantage.  \n\n  Click on the buttons
     to call them to the battlefield'
-  enemies: 0

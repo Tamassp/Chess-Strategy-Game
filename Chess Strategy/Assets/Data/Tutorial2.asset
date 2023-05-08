@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: 'Tutorial 2: Covers & Flanking'
   description: If the enemy is in cover, then you cannot hit them from the front.
-    \n\n  Flank them to take them down
-  enemies: 0
+    \n\n  Flank them to take them down \n\n  <b>Tip:<b> An other way of selecting
+    multiple pieces is to hold down Left Shift and click on multiple pieces.

@@ -7,8 +7,4 @@ public class LevelData : ScriptableObject
 {
     public string levelName;
     public string description;
-
-    public int enemies;
-    
-
 }

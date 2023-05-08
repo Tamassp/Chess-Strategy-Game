@@ -67,12 +67,13 @@ public class Selection : MonoBehaviour
                 {
                     if (Input.GetKey(KeyCode.LeftShift)) //inclusive select
                     {
+                        if(hit.transform.gameObject.tag.Equals("Piece"))
                         selected_table.addSelected(hit.transform.gameObject);
                     }
                     else //exclusive selected
                     {
                         selected_table.deselectAll();
-                        if(hit.transform.gameObject.tag.Equals("Piece") || hit.transform.gameObject.tag.Equals("Enemy"))
+                        if(hit.transform.gameObject.tag.Equals("Piece"))
                         selected_table.addSelected(hit.transform.gameObject);
                     }
                 }
@@ -104,7 +105,6 @@ public class Selection : MonoBehaviour
 
                     if (Physics.Raycast(ray, out hit, 50000.0f /*(1 << 8)*/))
                     {
-                        print("HELLOO");
                         verts[i] = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                         vecs[i] = ray.origin - hit.point;
                         Debug.DrawLine(Camera.main.ScreenToWorldPoint(corner), hit.point, Color.red, 1.0f);
@@ -196,6 +196,7 @@ public class Selection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.tag.Equals("Piece"))
         selected_table.addSelected(other.gameObject);
     }
 }

@@ -30,7 +30,7 @@ public class UIController : MonoBehaviour
         root = GetComponent<UIDocument>().rootVisualElement;
 
         levelLabel = root.Q<Label>("CurrentLevelLabel");
-        levelLabel.text = GameController.currentLevel.Substring(0, 6 );
+        levelLabel.text = GameController.currentLevel.Remove(GameController.currentLevel.Length - 7);
 
         goldLabel = root.Q<Label>("GoldValue");
         goldLabel.text = GameController.gold.ToString();
@@ -65,10 +65,10 @@ public class UIController : MonoBehaviour
             buttonBishop.SetEnabled(true);
         }
         //Under construction
-        // if (_gameController.getCompletedLevels() > 4)
-        // {
-        //     buttonRook.SetEnabled(true);
-        // }
+        if (_gameController.getCompletedLevels() > 4)
+        {
+            buttonRook.SetEnabled(true);
+        }
         
 
         buttonExitLevel.clicked += () => ExitLevel();
@@ -95,10 +95,11 @@ public class UIController : MonoBehaviour
     {
         if (GameController.gold > 0)
         {
-            GameObject newPawn = Instantiate(pawnPrefab, new Vector3(-30, 0, -48), Quaternion.identity);
+            //creating new pieces as part of the level prefab
+            GameObject newPawn = Instantiate(pawnPrefab, new Vector3(-30, 0, -48), Quaternion.identity, GameObject.Find(GameController.currentLevel).transform);
             newPawn.tag = "Piece";
             newPawn.GetComponent<NavMesh>().SetDestination(new Vector3(-30 + positionOffsetXPawn, 0, -30));
-            positionOffsetXPawn++;
+            positionOffsetXPawn+=2;
             //Update with event listener
             GameController.gold--;
             goldLabel.text = GameController.gold.ToString();
@@ -116,10 +117,10 @@ public class UIController : MonoBehaviour
     {
         if (GameController.gold >= 2)
         {
-            GameObject newKnight = Instantiate(knightPrefab, new Vector3(-20, 0, -45), Quaternion.identity);
+            GameObject newKnight = Instantiate(knightPrefab, new Vector3(-20, 0, -45), Quaternion.identity, GameObject.Find(GameController.currentLevel).transform);
             newKnight.tag = "Piece";
             newKnight.GetComponent<NavMesh>().SetDestination(new Vector3(-20 + positionOffsetXKnight, 0, -35));
-            positionOffsetXKnight+=2;
+            positionOffsetXKnight+=4;
             
             GameController.gold -= 2;
             goldLabel.text = GameController.gold.ToString();
@@ -132,10 +133,10 @@ public class UIController : MonoBehaviour
     {
         if (GameController.gold >= 2)
         {
-            GameObject newBishop = Instantiate(bishopPrefab, new Vector3(20, 0, -48), Quaternion.identity);
+            GameObject newBishop = Instantiate(bishopPrefab, new Vector3(20, 0, -48), Quaternion.identity, GameObject.Find(GameController.currentLevel).transform);
             newBishop.tag = "Piece";
             newBishop.GetComponent<NavMesh>().SetDestination(new Vector3(20 + positionOffsetXBishop, 0, -30));
-            positionOffsetXBishop++;
+            positionOffsetXBishop+=4;
             
             GameController.gold -= 2;
             goldLabel.text = GameController.gold.ToString();
@@ -149,7 +150,7 @@ public class UIController : MonoBehaviour
     {
         if (GameController.gold >= 5)
         {
-            GameObject newRook = Instantiate(rookPrefab, new Vector3(30, 0, -48), Quaternion.identity);
+            GameObject newRook = Instantiate(rookPrefab, new Vector3(30, 0, -48), Quaternion.identity, GameObject.Find(GameController.currentLevel).transform);
             newRook.tag = "Piece";
             newRook.GetComponent<NavMesh>().SetDestination(new Vector3(30 + positionOffsetXRook, 0, -35));
             positionOffsetXRook+=3;

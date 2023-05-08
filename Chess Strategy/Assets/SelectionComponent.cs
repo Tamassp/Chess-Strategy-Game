@@ -8,7 +8,7 @@ public class SelectionComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (gameObject.tag.Equals("Piece") || gameObject.tag.Equals("Enemy"))
+        if (gameObject.tag.Equals("Piece"))
         { 
             GetComponentInChildren<Renderer>().material.color = Color.red;
         }
@@ -16,7 +16,7 @@ public class SelectionComponent : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (gameObject.tag.Equals("Piece") || gameObject.tag.Equals("Enemy"))
+        if (gameObject.tag.Equals("Piece"))
         {
             GetComponentInChildren<Renderer>().material.color = Color.white;
         }

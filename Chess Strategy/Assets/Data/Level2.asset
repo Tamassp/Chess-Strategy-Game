@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23510afc92bc3844bdf7af241b965c6, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: 
-  levelName: Level 2
+  levelName: 'Level 2: Knights'
   description: 'You are facing the Dark King''s first defensive line. He outnumbers
     you at least 2 to 1 but your Knights just arrived to help you out. Use them smart
-    to get the upper hand \n\n  <b>Knights:</b> (cost: 2 gold)  Knights are fast
-    and can easily flank enemies, but they turn slow so make sure not to send them
-    into close corners '
-  enemies: 0
+    to get the upper hand \n\n  <b>Knights (cost: 2 gold)</b>  Knights are fast and
+    can easily flank enemies, but they turn slow so make sure not to send them into
+    close corners '

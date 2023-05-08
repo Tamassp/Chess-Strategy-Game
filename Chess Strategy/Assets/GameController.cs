@@ -109,7 +109,8 @@ public class GameController : MonoBehaviour, IDataPersistence
             pieceCount = numberOfPieces;
         }
         menuIsActive = false;
-        
+        Camera.main.transform.position = new Vector3(0, 30, -62);
+
     }
 
     public void Tutorial1Start()
@@ -156,7 +157,6 @@ public class GameController : MonoBehaviour, IDataPersistence
     {
         //In Unity the hierarchy information is stored in the transform property,
         //instead of the Gameobject itself
-        print("WHYY");
         GameObject cLevel = gameObject.transform.Find(currentLevel).gameObject;
         uIDocument.SetActive(false);
         Destroy(cLevel);
@@ -168,9 +168,8 @@ public class GameController : MonoBehaviour, IDataPersistence
         // {
         //     Destroy(gos[i]);
         // }
-        
-        
-        
+
+
         Destroy(cLevel);
         menuIsActive = true;
         gold = 0;
@@ -193,6 +192,10 @@ public class GameController : MonoBehaviour, IDataPersistence
                 if(completedLevels == 3) 
                     completedLevels ++;
                 break;
+            case  "Level3(Clone)":
+                if(completedLevels == 4) 
+                    completedLevels ++;
+                break;
         }
         menuUIDocument.SetActive(true);
     }
@@ -208,7 +211,6 @@ public class GameController : MonoBehaviour, IDataPersistence
 
         if (pieceCount == 0 && gold == 0 && !menuIsActive)
         {
-            print("22");
             LevelClose();
         }
     }
@@ -221,9 +223,7 @@ public class GameController : MonoBehaviour, IDataPersistence
     public void LoadData(GameData data)
     {
         this.completedLevels = data.completedLevels;
-        print("CL "+ completedLevels);
         menuUIDocument.SetActive(true);
-        print("UI???");
     }
 
     public void SaveData(ref GameData data)
