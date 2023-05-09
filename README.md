@@ -25,3 +25,5 @@ RTS Camera: https://www.youtube.com/watch?v=cfjLQrMGEb4&t=471s
 
 I do not have a WebGL build since I'm using Github Pages for my portfolio, but I have a build in a ZIP file (only 30 megabyte) that can be downloaded from this google drive:
 https://drive.google.com/drive/folders/1x-7COsMJ1hqLE1l8SrnBCmlufrjGIwCG?fbclid=IwAR0Yl-u3OZeopfJaGDe4H_NBr5fRPgN40MxSg3SbOLqG0kSyAhtQhzOXWe4
+
+OR lately I added another zip in the handin folder containing the game :)
