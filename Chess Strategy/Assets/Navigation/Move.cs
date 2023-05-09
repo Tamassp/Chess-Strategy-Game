@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+//// THIS IS AN OLD APPROACH. IT WAS NOT USED IN THE FINAL SOLUTION
+//// IT WAS SWAPPED WITH NAVMESH
+/// I just lef it as reference, but navmesh was a better solution in the game's usecase
 public class Move : MonoBehaviour
 {
     //public Transform destionation;

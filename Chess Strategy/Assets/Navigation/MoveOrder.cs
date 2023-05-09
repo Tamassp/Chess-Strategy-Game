@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//// THIS IS AN OLD APPROACH. IT WAS NOT USED IN THE FINAL SOLUTION
+//// IT WAS SWAPPED WITH NAVMESH
+/// I just lef it as reference, but navmesh was a better solution in the game's usecase
 public class MoveOrder : MonoBehaviour
 {
     private RaycastHit hit;
