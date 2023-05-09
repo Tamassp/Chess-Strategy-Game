@@ -12,7 +12,7 @@
                     <ui:Button text="Level 1:  Pawns" display-tooltip-when-elided="true" name="Level1Button" style="width: 120px; height: 30px; white-space: nowrap; align-items: stretch;" />
                     <ui:Button text="Level 2: Knights" display-tooltip-when-elided="true" name="Level2Button" style="width: 120px; height: 30px;" />
                     <ui:Button text="Level 3: Bishops" display-tooltip-when-elided="true" name="Level3Button" style="width: 120px; height: 40px;" />
-                    <ui:Button text="Level 4: Rooks &#10;(Under Construction&#10;" display-tooltip-when-elided="true" name="Level4Button" style="width: 120px; height: 40px; -unity-text-align: upper-center;" />
+                    <ui:Button text="Level 4: Rooks &#10;(Under Construction)" display-tooltip-when-elided="true" name="Level4Button" style="width: 120px; height: 40px; -unity-text-align: middle-center; justify-content: flex-start; font-size: 10px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement>
