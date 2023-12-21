@@ -1,5 +1,5 @@
 # Chess Strategy Game
- GMD
+ A game created for Game Development course, at VIA University Project
 
 Youtube link: https://www.youtube.com/watch?v=hso705xishI
 
