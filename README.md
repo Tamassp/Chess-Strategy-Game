@@ -23,7 +23,12 @@ RTS Camera: https://www.youtube.com/watch?v=cfjLQrMGEb4&t=471s
 
 (I have taken some ideas from them but most of the time I had to adjust the solution to my use case)
 
-I do not have a WebGL build since I'm using Github Pages for my portfolio, but I have a build in a ZIP file (only 30 megabyte) that can be downloaded from this google drive:
-https://drive.google.com/drive/folders/1x-7COsMJ1hqLE1l8SrnBCmlufrjGIwCG?fbclid=IwAR0Yl-u3OZeopfJaGDe4H_NBr5fRPgN40MxSg3SbOLqG0kSyAhtQhzOXWe4
+<br/>
 
-OR lately I added another zip in the handin folder containing the game :)
+<h2>Demo Video</h2>
+
+
+
+https://github.com/Tamassp/Chess-Strategy-Game/assets/62295505/b69ce533-01df-4c9b-b9b7-3c2d747db31f
+
+
